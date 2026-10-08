@@ -1,0 +1,40 @@
+GitHub Pages 修复版（基于 V28，含 8 张原照片）
+
+只需上传本包内的文件，不用打开旧网站再下载，不用重新挂照片。
+1. 解压 Birthday-GitHub-Pages-Fix.zip。
+2. 打开 https://github.com/barry1561088457-source/birthday ，保持 main 分支。
+3. Add file → Upload files；打开解压后的文件夹，把里面全部文件一起拖入上传框。
+4. index.html、app-*.js、style-*.css、font-*、texture-* 必须直接位于仓库根目录。
+   不要上传 ZIP，不要把外层文件夹整体作为子文件夹上传，不要只上传 index.html。
+5. 在页面底部 Commit changes，提交到 main；同名 index.html 会被更新。
+6. 等待 Actions 中最新 pages build and deployment 成功，再打开：
+   https://barry1561088457-source.github.io/birthday/?v=github-fix
+   标题应显示「V28 GitHub Pages 修复版」。以后分享普通网址即可。
+
+本包是所有资源都放在根目录的专用版本，不需要 assets 文件夹。
+之前已上传的旧 app/style 文件可以保留，修复页面引用新的文件名。
+旧 _headers、_redirects 是 Netlify 配置，GitHub Pages 不使用它们；不必为本次修复删除。
+.nojekyll 是空文件；若电脑隐藏它，可在仓库 Add file → Create new file 新建同名空文件。
+这些静态文件没有 Jekyll 变量，未上传 .nojekyll 也不影响本包普通文件路径。
+若当前 Pages 已能显示首页，保持现有发布设置即可。
+只有未配置发布源时，Settings → Pages → Deploy from a branch，main，/(root)，Save。
+
+修复内容
+HTML、脚本内原贴图和 CSS 字体路径全部改为相对路径，适配 /birthday/ 子目录。
+更改后的 JS/CSS 使用新的内容哈希文件名，避免缓存与旧文件混用。
+保留完整的 8 张内嵌照片、V28 模型、字体、色彩、灯光、材质、交互和只读权限。
+照片、原贴图和字体字节未改。未向 GitHub 或其他托管服务提交或发布内容。
+
+检查
+校验全部资源路径在 /birthday/ 与 /birthday/index.html 下均能对应包内文件。
+模拟项目子目录 HTTP 部署，检查全部资源可读取。
+核对 8 张照片与原相册一致、二进制资源逐字节一致、ZIP 完整。
+这里没有完成真实手机 GPU 的视觉验收。发布完成后如果仍显示旧加载页，关闭旧标签页后使用上面的带 v 参数网址。
+
+未来改照片
+此包是公开只读版本，访客不能编辑。请保留你自己的私人编辑 HTML。
+旧私人编辑器导出的 Netlify 包不能原样用于此 GitHub 项目子目录；需继续做 GitHub Pages 路径适配。
+不要把私人编辑器上传到公开仓库。
+
+原作者：咕噜蛋Daria；基于 Daria1216/carousel-lamp 改作。
+原项目与字体许可保留在 LICENSE.txt、FONT-LICENSE.txt 和网页内，遵守原个人非商业许可。
